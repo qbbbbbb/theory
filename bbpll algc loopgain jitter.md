@@ -1,7 +1,7 @@
 # A Bang-Bang Phase-Locked Loop Using Automatic Loop Gain Control and Loop Latency Reduction Techniques
 ## Introduction
 
-1. loop gain°¢noise sources and loop latency all decide PLL's output jitter. and the ouput jitter decide the BBPLL gain.
+1. loop gain„ÄÅnoise sources and loop latency all decide PLL's output jitter. and the ouput jitter decide the BBPLL gain.
 
 2. TDC power-consuming, and enter a strong nonlinear region.
 
@@ -29,10 +29,10 @@
 
 4. Topology B realizes the loop latency, provide nearly the same jitter performance as the topology A(D=0)
    
-topology A£∫
-![topology A](./pic/00.png)
-topology B£∫
-![topology B](./pic/01.png)
+topology AÔºö
+![topology A](https://imgur.com/a/uQoLBx6)
+topology BÔºö
+![topology B](https://imgur.com/a/w0aMvnv)
 
 ## Noise Analysis of the DBPLL
  1. [17] take into account only the DCO noise. [21] only reference clock noise.
@@ -44,13 +44,13 @@ topology B£∫
     - the equation reveal:
 
         when DCO noise, reference clock noise increase, K<sub>BB</sub> decrease.
-  ![BBPD gain](./pic/02.png)
-    - the relationship between ¶§ and K<sub>BB</sub> is nonmonotonic.
+  ![BBPD gain](https://imgur.com/a/VoWc9h2)
+    - the relationship between Œî and K<sub>BB</sub> is nonmonotonic.
 
-        when ¶§ is small, increasing ¶§ would increase K<sub>BB</sub> , but when ¶§ is large, increasing ¶§ would decrease K<sub>BB</sub>.
+        when Œî is small, increasing Œî would increase K<sub>BB</sub> , but when Œî is large, increasing Œî would decrease K<sub>BB</sub>.
     - when DCO noise and reference clock noise increase, loop gain decreases.
-    - ¶§ increases, loop gain increases. loop gain has an upper bound of 4/pi.
-    - if ¶§ is small, DCO noise cannot be suppressed and ignored any more.
+    - Œî increases, loop gain increases. loop gain has an upper bound of 4/pi.
+    - if Œî is small, DCO noise cannot be suppressed and ignored any more.
     - the equation have a great agreement with the G<sub>sim</sub> no matter which noise(DCO OR REF) dominant.
 
 3. Jitter of the BBPLL
@@ -74,10 +74,10 @@ topology B£∫
 3. Automatic Loop Gain Control
    
    - AUTO_SUM tends to be positive, negative, or zero when the loop gain is too small, too large or adequate.
-   - when ¶¬ < ¶¬<sub>OPT</sub>, ¶¬ will increase. When ¶¬ > ¶¬<sub>OPT</sub>, ¶¬ will decrease.
-   - the larger reference clock noise indeed deteriorates the output jitter, but it has little impact on ¶¬<sub>OPT</sub>.
+   - when Œ≤ < Œ≤<sub>OPT</sub>, Œ≤ will increase. When Œ≤ > Œ≤<sub>OPT</sub>, Œ≤ will decrease.
+   - the larger reference clock noise indeed deteriorates the output jitter, but it has little impact on Œ≤<sub>OPT</sub>.
 
 4. Split-Control DCO
    
-   - A larger K<sub>T</sub> provides a larger tuning range for the loop gain, but a larger K<sub>T</sub> increases the contribution from the quantization noise of the ¶§¶≤DAC to the output jitter. 
+   - A larger K<sub>T</sub> provides a larger tuning range for the loop gain, but a larger K<sub>T</sub> increases the contribution from the quantization noise of the ŒîŒ£DAC to the output jitter. 
    - To reduce this quantization noise, KT should be as small as possible. but beta has a upper bound, K<sub>T</sub> also has a minimum.
