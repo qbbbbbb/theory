@@ -30,9 +30,12 @@
 4. Topology B realizes the loop latency, provide nearly the same jitter performance as the topology A(D=0)
    
 topology A：
-![topology A](https://imgur.com/a/uQoLBx6)
+
+![topology A](./pic/00.png)
+
 topology B：
-![topology B](https://imgur.com/a/w0aMvnv)
+
+![topology B](./pic/01.png)
 
 ## Noise Analysis of the DBPLL
  1. [17] take into account only the DCO noise. [21] only reference clock noise.
@@ -44,7 +47,7 @@ topology B：
     - the equation reveal:
 
         when DCO noise, reference clock noise increase, K<sub>BB</sub> decrease.
-  ![BBPD gain](https://imgur.com/a/VoWc9h2)
+  ![BBPD gain](./pic/02.png)
     - the relationship between Δ and K<sub>BB</sub> is nonmonotonic.
 
         when Δ is small, increasing Δ would increase K<sub>BB</sub> , but when Δ is large, increasing Δ would decrease K<sub>BB</sub>.
